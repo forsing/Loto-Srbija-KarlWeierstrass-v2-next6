@@ -1,0 +1,87 @@
+3_KarlWeierstrass_NEXT6_2b3b — Hurst/R-S + ACF (POGODNO)
+============================================================
+
+KORAK 1: Weierstrass-ova funkcija nad svih izvucenih kombinacija
+
+  CSV izvucenih:        /Users/4c/Desktop/GHQ/data/loto7_4624_k43.csv
+  Ucitano izvlacenja:    4624
+  C(39,7):              15,380,937
+  f(t) = lex-indeks izvucene kombinacije u skupu svih 39C7
+
+
+============================================================
+KORAK 2b3b: Aparat 2b Hurst/R-S + Test 3b Autokorelacija (ACF)
+============================================================
+
+  PNG:                  /Users/4c/Desktop/GHQ/KarlWeierstrass/3_KarlWeierstrass_NEXT6_2b3b.png
+
+ACF nad rolling/local Hurst nizom:
+  broj rolling H tacaka = 31
+  max lag               = 20
+  95% band              = +/-0.352026
+  max |ACF|             = 0.477127
+  znacajnih lagova      = 1/20
+  Ljung-Box h           = 10
+  Ljung-Box Q           = 21.933953
+  Ljung-Box p           = 0.015445
+
+Shuffled rolling H max |ACF| referenca:
+  runs                  = 500
+  mean                  = 0.310141
+  std                   = 0.073827
+  z                     = 2.261849
+  p(shuffled >= obs)    = 0.028000
+  interpret.            = rolling H ima ACF signal iznad shuffled reference
+
+Top ACF lagovi rolling H po apsolutnoj vrednosti:
+  lag                  ACF
+  1             0.47712746
+  2             0.34572217
+  3             0.33876565
+  9             0.24965832
+  15           -0.23706341
+  4             0.19860238
+  14           -0.19729434
+  17           -0.16827067
+  10            0.15416978
+  16           -0.14196553
+
+Vreme KORAKA 2b3b: 0:00:03 (3.5 s)
+Ukupno vreme:       0:00:03 (3.6 s)
+
+============================================================
+PREDIKCIJA 6: NEXT6 / 2b3b / rolling H ACF
+============================================================
+
+Model:
+  Rolling H ima ACF signal iznad shuffled reference.
+  Sledeci H se procenjuje AR(1): H_next = mean(H) + rho_H*(H_last-mean(H)).
+  Prediktovani H zatim odredjuje koliko zadnji inkrement nosi trend.
+
+Parametri:
+  rho_H lag-1            = 0.47712746
+  rolling H mean         = 0.59744976
+  zadnji rolling H       = 0.62382045
+  pred. rolling H        = 0.61003194
+  H strength             = 0.73354629
+  local window           = 768
+  lokalni slope          = -739.26066925
+  lokalni resid std      = 4,500,683.77058056
+  recent mean dX         = -6,859.22555411
+  zadnji dX              = -2,143,496.00000000
+  zadnji lex             = 513,114
+  pred. inkrement        = -1,574,181.19660617
+
+Glavna prognoza:
+  pred. lex float        = -1,061,067.19660617
+  pred. lex              = 1
+  pred. kombinacija      = (1, 2, 3, 4, 5, 6, 7)
+
+Kandidati oko rolling-H ACF prognoze:
+         z           lex  kombinacija
+     -1.28             1  (1, 2, 3, 4, 5, 6, 7)
+      0.43       874,227  (1, 4, 6, 10, 15, 20, 27)
+      0.84     2,719,507  (1, 19, 25, 28, 31, 32, 34)
+      1.28     4,699,808  (2, 11, 21, 28, 34, 35, 36)
+
+Vreme PREDIKCIJE 6: 0:00:00 (0.0 s)
