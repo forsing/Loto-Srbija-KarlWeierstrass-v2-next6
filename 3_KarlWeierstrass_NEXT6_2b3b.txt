@@ -3,8 +3,8 @@
 
 KORAK 1: Weierstrass-ova funkcija nad svih izvucenih kombinacija
 
-  CSV izvucenih:        /Users/4c/Desktop/GHQ/data/loto7_4624_k43.csv
-  Ucitano izvlacenja:    4624
+  CSV izvucenih:        /data/loto7_4624_k43.csv
+  Ucitano izvlacenja:   4624
   C(39,7):              15,380,937
   f(t) = lex-indeks izvucene kombinacije u skupu svih 39C7
 
@@ -13,7 +13,7 @@ KORAK 1: Weierstrass-ova funkcija nad svih izvucenih kombinacija
 KORAK 2b3b: Aparat 2b Hurst/R-S + Test 3b Autokorelacija (ACF)
 ============================================================
 
-  PNG:                  /Users/4c/Desktop/GHQ/KarlWeierstrass/3_KarlWeierstrass_NEXT6_2b3b.png
+  PNG:                  /3_KarlWeierstrass_NEXT6_2b3b.png
 
 ACF nad rolling/local Hurst nizom:
   broj rolling H tacaka = 31
@@ -80,8 +80,8 @@ Glavna prognoza:
 Kandidati oko rolling-H ACF prognoze:
          z           lex  kombinacija
      -1.28             1  (1, 2, 3, 4, 5, 6, 7)
-      0.43       874,227  (1, 4, 6, 10, 15, 20, 27)
-      0.84     2,719,507  (1, 19, 25, 28, 31, 32, 34)
-      1.28     4,699,808  (2, 11, 21, 28, 34, 35, 36)
+      0.43       874,227  (1, x, 6, y, 15, z, 27)
+      0.84     2,719,507  (1, x, 25, y, 31, z, 34)
+      1.28     4,699,808  (2, x, 21, y, 34, z, 36)
 
 Vreme PREDIKCIJE 6: 0:00:00 (0.0 s)
