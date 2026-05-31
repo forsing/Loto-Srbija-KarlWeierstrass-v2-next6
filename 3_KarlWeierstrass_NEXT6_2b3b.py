@@ -26,7 +26,7 @@ from scipy import stats
 
 T0 = time.time()
 
-CSV_DRAWS = "/Users/4c/Desktop/GHQ/data/loto7_4624_k43.csv"
+CSV_DRAWS = "/data/loto7_4624_k43.csv"
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 PNG_PATH = os.path.join(HERE, "3_KarlWeierstrass_NEXT6_2b3b.png")
@@ -313,8 +313,8 @@ print("KRAJ 3_KarlWeierstrass_NEXT6_2b3b.")
 print()
 """
 3_KarlWeierstrass_NEXT6_2b3b — KORAK 1: formiranje krive f(t)
-  CSV:                  /Users/4c/Desktop/GHQ/data/loto7_4624_k43.csv
-  Ucitano izvlacenja:    4624
+  CSV:                  data/loto7_4624_k43.csv
+  Ucitano izvlacenja:   4624
   C(39,7):              15,380,937
 
 
@@ -325,8 +325,8 @@ KORAK 2b3b: Aparat 2b Hurst/R-S + Test 3b Autokorelacija (ACF)
   shuffled max|ACF|: mean=0.3101 std=0.0738 z=2.26 p=0.0280
   ⇒ rolling H ima ACF signal iznad shuffled reference
 
-PNG saved → /Users/4c/Desktop/GHQ/KarlWeierstrass/3_KarlWeierstrass_NEXT6_2b3b.png
-TXT saved → /Users/4c/Desktop/GHQ/KarlWeierstrass/3_KarlWeierstrass_NEXT6_2b3b.txt
+PNG saved → /3_KarlWeierstrass_NEXT6_2b3b.png
+TXT saved → /3_KarlWeierstrass_NEXT6_2b3b.txt
 Vreme KORAKA 2b3b: 0:00:21 (21.9 s)
 Ukupno vreme:      0:00:22 (22.1 s)
 
@@ -460,12 +460,6 @@ print()
 """
 Predikcija će koristiti ACF/AR(1) nad rolling H režimom da proceni sledeći H, pa time skalira lokalni drift.
 
-Dodajem PREDIKCIJU 6: AR(1) procena sledećeg rolling H iz ACF-a, zatim lokalni drift u zadnjem prozoru prema procenjenom H režimu.
-
-
-
-Dodao sam PREDIKCIJA 6:
-
 AR(1) procena sledećeg rolling H preko rho_H = ACF lag-1
 skaliranje lokalnog drift-a prema procenjenom H_next
 glavna Loto 7/39 kombinacija + kandidati oko prognoze
@@ -476,8 +470,8 @@ upis u 3_KarlWeierstrass_NEXT6_2b3b.txt
 
 """
 3_KarlWeierstrass_NEXT6_2b3b — KORAK 1: formiranje krive f(t)
-  CSV:                  /Users/4c/Desktop/GHQ/data/loto7_4624_k43.csv
-  Ucitano izvlacenja:    4624
+  CSV:                  /data/loto7_4624_k43.csv
+  Ucitano izvlacenja:   4624
   C(39,7):              15,380,937
 
 
@@ -488,8 +482,8 @@ KORAK 2b3b: Aparat 2b Hurst/R-S + Test 3b Autokorelacija (ACF)
   shuffled max|ACF|: mean=0.3101 std=0.0738 z=2.26 p=0.0280
   ⇒ rolling H ima ACF signal iznad shuffled reference
 
-PNG saved → /Users/4c/Desktop/GHQ/KarlWeierstrass/3_KarlWeierstrass_NEXT6_2b3b.png
-TXT saved → /Users/4c/Desktop/GHQ/KarlWeierstrass/3_KarlWeierstrass_NEXT6_2b3b.txt
+PNG saved → /3_KarlWeierstrass_NEXT6_2b3b.png
+TXT saved → /3_KarlWeierstrass_NEXT6_2b3b.txt
 Vreme KORAKA 2b3b: 0:00:03 (3.5 s)
 Ukupno vreme:      0:00:03 (3.6 s)
 
@@ -510,10 +504,10 @@ PREDIKCIJA 6 — NEXT6 / 2b3b / rolling H ACF
   pred. kombinacija      = (1, 2, 3, 4, 5, 6, 7)
   kandidati oko rolling-H ACF prognoze:
     z=-1.28  lex=         1  combo=(1, 2, 3, 4, 5, 6, 7)
-    z= 0.43  lex=   874,227  combo=(1, 4, 6, 10, 15, 20, 27)
-    z= 0.84  lex= 2,719,507  combo=(1, 19, 25, 28, 31, 32, 34)
-    z= 1.28  lex= 4,699,808  combo=(2, 11, 21, 28, 34, 35, 36)
+    z= 0.43  lex=   874,227  combo=(1, x, 6, y, 15, z, 27)
+    z= 0.84  lex= 2,719,507  combo=(1, x, 25, y, 31, z, 34)
+    z= 1.28  lex= 4,699,808  combo=(2, x, 21, y, 34, z, 36)
 
-TXT updated → /Users/4c/Desktop/GHQ/KarlWeierstrass/3_KarlWeierstrass_NEXT6_2b3b.txt
+TXT updated → /3_KarlWeierstrass_NEXT6_2b3b.txt
 Vreme PREDIKCIJE 6: 0:00:00 (0.0 s)
 """
